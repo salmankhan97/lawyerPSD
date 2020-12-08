@@ -1,0 +1,333 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$blue: #000da1 !important;
+$header: #0b31a4; 
+
+%transit{
+	transition: all 0.3s;
+}
+
+@mixin transform($property){
+	transform: $property;
+	-webkit-transform: $property;
+	-moz-transform: $property;
+	-o-transform: $property;
+}
+body{
+	font-family: "Montserrat", sans-serif !important;
+}
+
+/*defaults*/
+.header{
+	margin-bottom: 120px;
+	@media (max-width: 767px){
+		margin-bottom: 60px;
+	}
+	.bar{
+		display: inline-block;
+		width: 60px;
+		height: 4px;
+		background-color: #ff631a;
+		border-radius: 10px;
+		margin-bottom: 16px;
+		transition: all 5s;
+	}
+	h2{
+		font-size: 36px;
+		color: $header;
+		font-weight: 700;
+		margin-bottom: 16px;
+		text-transform: uppercase;
+		@media (max-width: 767px){
+			font-size: 26px;
+		}
+	}
+}
+/*navbar*//*navbar*//*navbar*/
+.navbar{
+	.navbar-brand{
+		font-size: 30px;
+		letter-spacing: 6px;
+		color: $blue;
+		font-weight: 700;
+	}
+	.nav-link{
+		font-size: 16px;
+		color: $blue;
+		font-weight: 600;
+		border: 1px solid;
+		border-color: transparent;
+		@extend %transit;
+		&:hover{
+			background: $blue;
+			border: 1px solid;
+			border-radius: 6px;
+			color: #FFF !important;
+		}
+	}
+}
+/*banner1*//*banner1*//*banner1*/
+.banner1{
+	padding: 240px 0px;
+	background: url("../images/lawyer_pro (13).png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	.content{
+		h1{
+			font-size: 82px;
+			color: #ffffff;
+			font-weight: 700;
+			@media (max-width: 767px){
+				font-size: 50px;
+			}
+		}
+	}
+	.nav-link{
+		position: absolute;
+		top: 80%;
+		left: 50%;
+		@include transform(translateX(-50%));
+		font-size: 36px;
+		line-height: 41px;
+		color: #ffffff;
+		@media (max-width: 767px){
+			font-size: 26px;
+		}
+	}
+}
+
+/*whoweare*//*whoweare*//*whoweare*/
+.whoweare{
+	padding-top: 120px;
+	padding-bottom: 180px;
+	@media (max-width: 767px){
+		padding-top: 60px;
+		padding-bottom: 90px;
+	} 
+}
+
+/*whatwedo*//*whatwedo*//*whatwedo*/
+.whatwedo{
+	background: url("../images/lawyer_pro (6).png") right bottom no-repeat, #fafcfc;
+	padding: 120px 0px;
+	background-size: 50% 80%;
+	@media (max-width: 1199px){
+		background: #fafcfc;
+	}
+	@media (max-width: 767px){
+		padding: 60px;
+	} 
+	.card{
+		&::after{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			content: "";
+			top: 0;
+			left: 0;
+			background: linear-gradient(0deg, rgba(0,4,182,0.8046568969384629) 0%, rgba(0,0,0,0) 100%);
+			z-index: 1;
+			opacity: 1;
+			transition: all 0.5s;
+		}
+		&:hover::after{
+			opacity: 0;
+		}
+		.card-img-overlay{
+			z-index: 2;
+		}
+		h3{
+			font-size: 26px;
+			color: #fafcfc;
+			font-weight: 700;
+			@media (max-width: 767px){
+				font-size: 22px;
+			}
+		}
+	}
+	.arrow{
+		position: absolute;
+		top: 80%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 40px;
+		z-index: 2;
+		@media (max-width: 767px){
+			font-size: 20px;
+		}
+	}
+}
+
+/*attorneys*//*attorneys*//*attorneys*/
+.attorneys{
+	padding: 200px 0px;
+	background: url("../images/lawyer_pro (11).png");
+	background-position: bottom center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	@media (max-width :767px){
+		padding: 100px 0px;
+	}
+	.header{
+		.seemore{
+			font-size: 18px;
+			color: #ff631a;
+			font-weight: 700;
+			text-decoration: none;
+			transition: all 0.3s;
+			@media (max-width: 767px){
+				font-size: 14px;
+			}
+			&:hover{
+				color:#FFF;
+			}
+		}
+	}
+	.card{
+		overflow: hidden;
+		&::after{
+			content:"";
+			background: linear-gradient(0deg, rgba(0,13,161,0) 0%, rgba(0,13,161,0.5049370089832808) 10%, rgba(0,13,161,0.5049370089832808) 90%, rgba(0,13,161,0) 100%);
+			transition: all 0.5s;
+			position: absolute;
+			width: 100%;
+			height: 200%;
+			top: 60%;
+			left: 0;
+			z-index: 1;
+		}
+		&:hover::after{
+			top: -20%;
+		}
+		.card-img-overlay{
+			z-index: 3;
+			h3{
+				font-size: 24px;
+				font-weight: 700;
+				@media (max-width: 767px){
+					font-size: 18px;
+				}
+			}
+		}
+	}
+}
+
+/*languages*//*languages*//*languages*/
+.languages{
+	padding: 120px 0;
+	@media (max-width: 767px){
+		padding: 60px 0;
+	}
+	.content{
+		h4{
+			font-size: 24px;
+			color: #000da1;
+			font-weight: 700;
+			text-transform: uppercase;
+			text-align: justify;
+			@media (max-width: 767px){
+				font-size: 18px;
+			}
+		}
+		p{
+			font-size: 14px;
+			color: #adbbbe;
+			font-weight: 400;
+		}
+		a{
+			font-size: 14px;
+			color: #ff631a;
+			font-weight: 700;
+			text-decoration: none;
+			transition: all 0.3s;
+			&:hover{
+				opacity: 0.5;
+			}
+		}
+	}
+}
+
+/*contactus*//*contactus*//*contactus*/
+.contact{
+	padding: 120px 0;
+	@media (max-width: 767px){
+		padding: 60px 0;
+	}
+	background-color: #000da1;
+	color: #FFF;
+	form{
+		.form-control{
+			background: #0000;
+			border-width: 0 0 2px 0px;
+			border-radius: 0;
+			border-color: #ffffff5e;
+			font-size: 16px;
+			font-weight: 400;
+			color: #FFF;
+			padding: 15px 0px;
+			@media (max-width: 767px){
+				font-size: 14px;
+				padding: 15px 5px;
+			}
+			&:focus{
+			    box-shadow: none;
+			}
+			&::placeholder{
+				font-size: 16px;
+				color: #ffffff;
+				font-weight: 400;
+				opacity: 1;
+				@media (max-width: 767px){
+					font-size: 14px;
+				}
+			}
+		} 
+		.submit{
+			background-color: #ff631a;
+		    font-size: 14px;
+		    color: #fff;
+		    font-weight: 700;
+		    padding: 10px 90px;
+		    border-color: #ff631a;
+		    margin-left: auto;
+		    margin-right: auto;
+		    display: block;
+		    text-transform: uppercase;
+		    transition: all 0.5s;
+		    &:hover{
+		    	background-color: transparent !important;
+		    }
+
+		}   
+	}
+}		
+
+
+/*footer*//*footer*//*footer*/
+footer{
+	padding: 40px 0px;
+	background-color: #02072f;
+	@media(max-width: 767px){
+		padding: 20px 0px;
+	}
+	.cpy{
+		font-size: 14px;
+		color: #4c5fd0;
+		font-weight: 400;
+		@media (max-width: 767px){
+			font-size: 12px;
+		}
+	}
+	.nav-link{
+		font-size: 18px;
+		color: #b5c0f3;
+		@media (max-width: 767px){
+			font-size: 15px;
+		}
+		&:hover{
+			color: #ff631a !important;
+		}
+	}
+
+}

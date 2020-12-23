@@ -182,7 +182,7 @@ body {
       left: 0;
       z-index: 1; }
     .attorneys .card:hover::after {
-      top: -20%; }
+      top: 100%; }
     .attorneys .card .card-img-overlay {
       z-index: 3; }
       .attorneys .card .card-img-overlay h3 {
